@@ -91,7 +91,7 @@ nav {
 }
 
 .hero {
-    background: linear-gradient(rgba(5, 28, 17, 0.85), rgba(5, 28, 17, 0.85)), url('../imagens/hero-bg.jpg');
+    background: linear-gradient(rgba(5, 28, 17, 0.85), rgba(5, 28, 17, 0.85)), url('../../imagens/hero-bg.jpg');
     background-color: var(--secondary-color);
     background-size: cover;
     background-position: center;
