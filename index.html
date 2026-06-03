@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TerraVis - Visão Orbital para o Campo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <i class='bx bx-radar'></i> Terra<span>Vis</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#estatisticas">Destaques</a></li>
+                <li><a href="#problemas">Riscos</a></li>
+                <li><a href="#solucoes">Soluções</a></li>
+                <li><a href="#tecnologia">Tecnologia</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container hero-content">
+                <h5>VISÃO ORBITAL PARA O CAMPO BRASILEIRO</h5>
+                <h1>TerraVis</h1>
+                <p>Plataforma de inteligência orbital para monitoramento de lavouras, queimadas, enchentes e janela de plantio.</p>
+                <a href="#sobre" class="btn">Saiba Mais</a>
+            </div>
+        </section>
+
+        <section id="sobre" class="section-padding">
+            <div class="container">
+                <h2 class="section-title">O que é o TerraVis</h2>
+                <p class="section-desc">O TerraVis é uma plataforma de inteligência orbital voltada ao campo brasileiro. Usando dados de satélites públicos e gratuitos — principalmente o programa Copernicus da ESA e o FIRMS da NASA — o sistema monitora quatro dimensões críticas para o produtor rural.</p>
+            </div>
+        </section>
+
+        <section id="estatisticas" class="stats section-padding">
+            <div class="container grid-4">
+                <div class="stat-item">
+                    <h3>77%</h3>
+                    <p>dos produtores rurais no Brasil são pequeno porte</p>
+                </div>
+                <div class="stat-item">
+                    <h3>R$ 0</h3>
+                    <p>custo para acessar imagens do Copernicus</p>
+                </div>
+                <div class="stat-item">
+                    <h3>5 dias</h3>
+                    <p>revisita do Sentinel-2 sobre uma mesma área</p>
+                </div>
+                <div class="stat-item">
+                    <h3>3h</h3>
+                    <p>atualização dos focos de calor pelo FIRMS</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="problemas" class="section-padding">
+            <div class="container">
+                <h2 class="section-title">Quatro riscos, zero informação</h2>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Problema</th>
+                                <th>Impacto</th>
+                                <th>Dado orbital disponível</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Lavoura doente sem detecção precoce</td>
+                                <td>Perda de até 30% da produção por safra</td>
+                                <td>NDVI via Sentinel-2 (ESA)</td>
+                            </tr>
+                            <tr>
+                                <td>Queimadas sem alerta antecipado</td>
+                                <td>Destruição de lavouras e pastagens</td>
+                                <td>FIRMS/MODIS (NASA) - atualização a cada 3h</td>
+                            </tr>
+                            <tr>
+                                <td>Enchentes sem monitoramento</td>
+                                <td>Perda de solo, equipamentos e colheita</td>
+                                <td>Sentinel-1 SAR - radar que atravessa nuvens</td>
+                            </tr>
+                            <tr>
+                                <td>Plantio em época errada</td>
+                                <td>Produtividade até 40% abaixo do potencial</td>
+                                <td>Copernicus Climate Service - histórico 30 anos</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="solucoes" class="section-padding bg-light">
+            <div class="container">
+                <h2 class="section-title">Nossas Soluções</h2>
+                <div class="grid-4">
+                    <a href="#tecnologia" class="card-link">
+                        <div class="card">
+                            <i class='bx bx-leaf'></i>
+                            <h4>Módulo NDVI</h4>
+                            <p><strong>Lógica:</strong> Cálculo simulado com dados de entrada do usuário para saúde da planta.</p>
+                            <p class="card-detail">Utiliza imagens do Sentinel-2 para gerar índices de vegetação e detectar anomalias precocemente.</p>
+                        </div>
+                    </a>
+                    <a href="#tecnologia" class="card-link">
+                        <div class="card">
+                            <i class='bx bx-flame'></i>
+                            <h4>Módulo Queimadas</h4>
+                            <p><strong>Lógica:</strong> Índice de risco por temperatura, umidade e vento.</p>
+                            <p class="card-detail">Alimentado pelo NASA FIRMS, permite detectar incêndios ativos próximos às propriedades e calcular riscos.</p>
+                        </div>
+                    </a>
+                    <a href="#tecnologia" class="card-link">
+                        <div class="card">
+                            <i class='bx bx-water'></i>
+                            <h4>Módulo Enchentes</h4>
+                            <p><strong>Lógica:</strong> Alerta por nível de rio e precipitação.</p>
+                            <p class="card-detail">Baseado no Sentinel-1 SAR, um radar que atravessa nuvens e chuva para monitorar alagamentos.</p>
+                        </div>
+                    </a>
+                    <a href="#tecnologia" class="card-link">
+                        <div class="card">
+                            <i class='bx bx-calendar-check'></i>
+                            <h4>Módulo Plantio</h4>
+                            <p><strong>Lógica:</strong> Recomendação por cultura e período ideal do ano.</p>
+                            <p class="card-detail">Cruza dados históricos de 30 anos do C3S para identificar o melhor período para cada cultura.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+       
+        <section id="tecnologia" class="section-padding">
+            <div class="container">
+                <h2 class="section-title">Conectando dados reais do espaço</h2>
+                <div class="tech-content">
+                    <div class="tech-item">
+                        <i class='bx bx-broadcast'></i>
+                        <div>
+                            <h4>Copernicus Data Space — ESA</h4>
+                            <p>Fornece bandas espectrais para cálculo do NDVI e tecnologia radar SAR para detectar alagamentos mesmo com nuvens.</p>
+                        </div>
+                    </div>
+                    <div class="tech-item">
+                        <i class='bx bx-satellite'></i>
+                        <div>
+                            <h4>NASA FIRMS</h4>
+                            <p>Fire Information for Resource Management. Atualização a cada 3 horas sobre focos de calor globais.</p>
+                        </div>
+                    </div>
+                    <div class="tech-item">
+                        <i class='bx bx-cloud-lightning'></i>
+                        <div>
+                            <h4>Copernicus Climate Service — C3S</h4>
+                            <p>Histórico climático de 30 anos e previsões de médio prazo para coordenação de plantio e produtividade.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 TerraVis - FIAP Engenharia de Software 1ESPT - Global Solution Space Connect.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
