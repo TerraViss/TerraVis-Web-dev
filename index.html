@@ -23,6 +23,7 @@
                 <li><a href="#estatisticas">Destaques</a></li>
                 <li><a href="#problemas">Riscos</a></li>
                 <li><a href="#solucoes">Soluções</a></li>
+                <li><a href="#modelagem">Modelagem</a></li>
                 <li><a href="#tecnologia">Tecnologia</a></li>
                 <li><a href="#demo">Demo</a></li>
                 <li><a href="./src/css/pagina/quiz.html" class="nav-quiz">Quiz</a></li>
@@ -187,7 +188,66 @@
         </section>
 
        
-        <section id="tecnologia" class="section-padding">
+        <section id="modelagem" class="section-padding">
+            <div class="container">
+                <h2 class="section-title">Como os dados são analisados?</h2>
+                <div class="modeling-content">
+                    <div class="modeling-intro">
+                        <h3>Modelagem Matemática e Análise de Dados</h3>
+                        <p>Desenvolvemos modelos rigorosos para interpretar o comportamento de variáveis críticas no campo, utilizando funções que representam fenômenos reais.</p>
+                    </div>
+
+                    <div class="modeling-details">
+                        <div class="analysis-block">
+                            <div class="analysis-text">
+                                <h4>1. Ciclo NDVI (Função Polinomial)</h4>
+                                <p><strong>Definição:</strong> f(x) = -0.015(x - 5.5)² + 0.8</p>
+                                <p><strong>Justificativa:</strong> O vigor vegetativo segue um ciclo de crescimento, pico e senescência, perfeitamente representado por uma parábola de concavidade para baixo.</p>
+                                <ul class="math-analysis">
+                                    <li><strong>Domínio:</strong> [1, 12] (Meses do ano)</li>
+                                    <li><strong>Imagem:</strong> [0.34, 0.8] (Variação do índice)</li>
+                                    <li><strong>Vértice:</strong> (5.5, 0.8) — Indica o pico de vigor em meados de Junho.</li>
+                                </ul>
+                            </div>
+                            <div class="analysis-image">
+                                <img src="./src/css/imagens/grafico_ndvi_detalhado.png" alt="Análise NDVI" class="img-fluid">
+                            </div>
+                        </div>
+
+                        <div class="analysis-block reverse">
+                            <div class="analysis-text">
+                                <h4>2. Risco de Queimada (Função Exponencial)</h4>
+                                <p><strong>Definição:</strong> g(t) = e^(0.15 * (t - 25))</p>
+                                <p><strong>Justificativa:</strong> O risco ambiental não cresce de forma linear; após um limiar de temperatura, a probabilidade de ignição e propagação acelera drasticamente.</p>
+                                <ul class="math-analysis">
+                                    <li><strong>Crescimento:</strong> Exponencial a partir de 30°C.</li>
+                                    <li><strong>Comportamento:</strong> Função estritamente crescente, indicando perigo crítico em ondas de calor.</li>
+                                </ul>
+                            </div>
+                            <div class="analysis-image">
+                                <img src="./src/css/imagens/grafico_queimada_detalhado.png" alt="Análise de Queimada" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="code-section">
+                        <h4><i class='bx bxl-python'></i> Implementação e Rigor Técnico</h4>
+                        <p>O código Python realiza o processamento vetorial dos dados orbitais para alimentar estes modelos em tempo real.</p>
+                        <pre><code>
+# Cálculo de Risco Exponencial
+def calcular_risco(temp):
+    return np.exp(0.15 * (temp - 25))
+
+# Análise de Vigor Polinomial
+def analisar_vigor(mes):
+    return -0.015 * (mes - 5.5)**2 + 0.8
+                        </code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tecnologia" class="section-padding bg-light">
             <div class="container">
                 <h2 class="section-title">Conectando dados reais do espaço</h2>
                 <div class="tech-content">
