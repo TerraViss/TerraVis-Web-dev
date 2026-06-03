@@ -108,6 +108,86 @@ A IA leu os arquivos existentes (`index.html`, `css/style.css`, `js/script.js`) 
 
 ---
 
+## Interação 3
+
+### O que foi solicitado para a IA
+
+Criar uma página de quiz completa (`quiz.html`) contendo exatamente 10 perguntas sobre o tema do projeto TerraVis, com os seguintes requisitos:
+- Perguntas exibidas dinamicamente via JavaScript (não fixas no HTML)
+- Array de perguntas no JavaScript
+- Uma pergunta exibida por vez
+- Apenas uma resposta selecionável por pergunta
+- Resultado final com pontuação e mensagem de desempenho
+- Código organizado em funções (sem código solto)
+- Interface simples seguindo a identidade visual do projeto
+- Botão de reiniciar o quiz
+- Apenas JavaScript puro (moderno), HTML e CSS — sem frameworks ou bibliotecas externas
+- As 10 perguntas e alternativas foram fornecidas textualmente pelo usuário, com as respostas corretas indicadas com (✓)
+
+### O que a IA retornou
+
+Três novos arquivos criados:
+
+**`quiz.html`** (na raiz do projeto):
+- Header com logo clicável que retorna ao `index.html` e tag "Quiz de Conhecimentos"
+- `#quiz-screen`: contador de pergunta atual, barra de progresso animada, texto da pergunta, lista de opções gerada pelo JS e botão "Próxima →" (desabilitado até o usuário selecionar)
+- `#result-screen` (oculto com atributo `hidden`): ícone de troféu, pontuação no formato "X / 10", mensagem de desempenho e botão "Reiniciar Quiz"
+
+**`css/quiz.css`**:
+- Mesma paleta do site principal (`--primary-color: #2ecc71`, `--secondary-color: #051c11`, fontes Inter e Montserrat)
+- `.option-btn` como cards clicáveis; após seleção: `.correct` (borda e círculo verde) e `.wrong` (borda e círculo vermelho) — a resposta correta sempre fica verde mesmo que o usuário erre
+- Barra de progresso com `transition: width 0.45s ease` atualizada a cada pergunta
+- Botão desabilitado com `opacity: 0.3` enquanto nenhuma opção foi escolhida
+- Responsivo: padding reduzido e tag do header oculta abaixo de 600px
+
+**`js/quiz.js`**:
+- Array `questions` com os 10 objetos `{ text, options[], correct }`, sendo `correct` o índice (0–3) da alternativa correta
+- Fluxo de funções: `init()` → `renderQuestion()` → `selectOption()` → `nextQuestion()` → `showResult()` → `restart()` — nenhum código fora de função
+- `getResultMessage(points)` com 4 faixas: ≤3, ≤6, ≤9 e 10 acertos
+- O texto do botão muda automaticamente para "Ver resultado" na última pergunta
+
+Gabarito implementado (índices das respostas corretas):
+- Perguntas 1 a 7: `correct: 2` (alternativa C)
+- Perguntas 8 e 9: `correct: 3` (alternativa D)
+- Pergunta 10: `correct: 1` (alternativa B)
+
+### O que foi alterado ou rejeitado
+
+**Aceito integralmente:**
+- Toda a estrutura HTML, CSS e JavaScript do quiz
+
+**Decisões tomadas pela IA:**
+- Após o usuário selecionar uma opção, o feedback correto/errado é exibido imediatamente (antes de clicar em "Próxima"), tornando a experiência mais educativa sem violar nenhum requisito
+- O botão muda seu próprio texto conforme o contexto ("Próxima →" vs "Ver resultado"), evitando a necessidade de um botão separado para a última pergunta
+
+---
+
+## Interação 4
+
+### O que foi solicitado para a IA
+
+Adicionar uma forma de acessar o quiz (`quiz.html`) diretamente pela página principal do projeto, pois a ligação entre as duas páginas havia sido esquecida.
+
+### O que a IA retornou
+
+Duas adições no `index.html` e os respectivos estilos no `css/style.css`:
+
+**`index.html`**:
+- Link "Quiz" adicionado ao final da navbar com a classe `.nav-quiz`
+- Nova seção `.quiz-cta` antes do `</main>`, contendo ícone, título "Teste seus conhecimentos", texto descritivo e botão "Fazer o Quiz" linkando para `quiz.html`
+
+**`css/style.css`**:
+- `.nav-quiz`: destaque visual na navbar com fundo verde (`--primary-color`), texto escuro e bordas arredondadas — diferenciando o link de quiz dos demais itens de âncora
+- `.quiz-cta`: banner de fundo escuro (`--secondary-color`) com borda superior verde, layout flex com ícone, bloco de texto e botão lado a lado
+- Responsividade: abaixo de 600px o banner vira coluna centralizada
+
+### O que foi alterado ou rejeitado
+
+**Aceito integralmente:**
+- Navbar e seção CTA
+
+---
+
 
 
 
