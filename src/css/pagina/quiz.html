@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TerraVis — Quiz de Conhecimentos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../quiz.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="../../../index.html" class="logo">
+                <i class='bx bx-radar'></i> Terra<span>Vis</span>
+            </a>
+            <span class="header-tag">Quiz de Conhecimentos</span>
+        </nav>
+    </header>
+
+    <main>
+        <div id="quiz-screen" class="quiz-card">
+            <div class="quiz-header">
+                <span id="question-counter"></span>
+                <div class="progress-bar">
+                    <div id="progress-fill" class="progress-fill"></div>
+                </div>
+            </div>
+            <p id="question-text" class="question-text"></p>
+            <div id="options-list" class="options-list"></div>
+            <button id="btn-next" class="btn-next" disabled>Próxima →</button>
+        </div>
+
+        <div id="result-screen" class="quiz-card result-card" hidden>
+            <i class='bx bx-trophy result-icon'></i>
+            <h2>Resultado Final</h2>
+            <p id="result-score" class="result-score"></p>
+            <p id="result-message" class="result-message"></p>
+            <button id="btn-restart" class="btn-next btn-restart">Reiniciar Quiz</button>
+        </div>
+    </main>
+
+    <script src="../js/quiz.js"></script>
+</body>
+</html>
