@@ -40,7 +40,6 @@ h1, h2, h3, h4, .logo {
     gap: 20px;
 }
 
-/* Header */
 header {
     background: var(--secondary-color);
     padding: 20px 0;
@@ -91,7 +90,6 @@ nav {
     color: var(--primary-color);
 }
 
-/* Hero Section */
 .hero {
     background: linear-gradient(rgba(5, 28, 17, 0.85), rgba(5, 28, 17, 0.85)), url('../imagens/hero-bg.jpg');
     background-color: var(--secondary-color);
@@ -136,7 +134,6 @@ nav {
     background: var(--accent-color);
 }
 
-/* Seções Gerais */
 .section-title {
     text-align: center;
     font-size: 2.5rem;
@@ -150,7 +147,6 @@ nav {
     margin: 0 auto 40px;
 }
 
-/* Stats */
 .stats {
     background: var(--bg-light);
 }
@@ -166,7 +162,6 @@ nav {
     margin-bottom: 10px;
 }
 
-/* Table */
 .table-responsive {
     overflow-x: auto;
     margin-top: 30px;
@@ -193,7 +188,6 @@ tr:hover {
     background-color: #f9f9f9;
 }
 
-/* Cards */
 .bg-light {
     background-color: var(--bg-light);
 }
@@ -240,7 +234,6 @@ tr:hover {
     color: var(--secondary-color);
 }
 
-/* Tecnologia */
 .tech-content {
     display: flex;
     flex-direction: column;
@@ -267,7 +260,6 @@ tr:hover {
     margin-bottom: 5px;
 }
 
-/* Footer */
 footer {
     background: var(--secondary-color);
     color: var(--text-light);
@@ -276,7 +268,6 @@ footer {
     border-top: 4px solid var(--primary-color);
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
