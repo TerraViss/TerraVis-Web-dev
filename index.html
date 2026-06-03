@@ -24,6 +24,7 @@
                 <li><a href="#problemas">Riscos</a></li>
                 <li><a href="#solucoes">Soluções</a></li>
                 <li><a href="#tecnologia">Tecnologia</a></li>
+                <li><a href="#demo">Demo</a></li>
             </ul>
         </nav>
     </header>
@@ -210,6 +211,64 @@
                             <p>Histórico climático de 30 anos e previsões de médio prazo para coordenação de plantio e produtividade.</p>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+        <section id="demo" class="section-padding bg-light">
+            <div class="container">
+                <h2 class="section-title">Solicite uma Demo</h2>
+                <p class="section-desc">Preencha o formulário e nossa equipe entrará em contato para apresentar o TerraVis na prática.</p>
+
+                <form id="demo-form" class="demo-form" novalidate>
+                    <div class="form-group">
+                        <label for="nome">Nome completo</label>
+                        <input type="text" id="nome" name="nome" placeholder="Seu nome completo">
+                        <span class="form-error" id="nome-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="empresa">Empresa / Fazenda</label>
+                        <input type="text" id="empresa" name="empresa" placeholder="Nome da sua empresa ou fazenda">
+                        <span class="form-error" id="empresa-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com">
+                        <span class="form-error" id="email-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999">
+                        <span class="form-error" id="telefone-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>Qual funcionalidade mais interessa?</label>
+                        <div class="checkbox-group" id="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="funcionalidade" value="ndvi">
+                                <span>Saúde da Lavoura (NDVI)</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="funcionalidade" value="queimadas">
+                                <span>Alertas de Queimadas</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="funcionalidade" value="enchentes">
+                                <span>Detecção de Enchentes</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="funcionalidade" value="plantio">
+                                <span>Janela de Plantio</span>
+                            </label>
+                        </div>
+                        <span class="form-error" id="funcionalidade-error"></span>
+                    </div>
+                    <button type="submit" class="btn btn-form">Solicitar Demo</button>
+                </form>
+
+                <div id="demo-success" class="demo-success" hidden>
+                    <i class='bx bx-check-circle'></i>
+                    <h3>Solicitação enviada!</h3>
+                    <p>Obrigado, <strong id="success-nome"></strong>. Nossa equipe entrará em contato em breve.</p>
                 </div>
             </div>
         </section>
