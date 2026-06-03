@@ -668,3 +668,122 @@ footer {
         text-align: center;
     }
 }
+
+/* ===== Theme Switcher ===== */
+.theme-switcher {
+    position: fixed;
+    bottom: 28px;
+    right: 24px;
+    z-index: 2000;
+    background: var(--secondary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 50px;
+    padding: 8px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.theme-switcher-label {
+    color: #aaa;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    font-family: 'Inter', sans-serif;
+}
+
+.theme-buttons {
+    display: flex;
+    gap: 6px;
+}
+
+.theme-btn {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    padding: 0;
+    transition: border-color 0.2s, transform 0.2s;
+    overflow: hidden;
+}
+
+.theme-btn.active {
+    border-color: var(--primary-color);
+    transform: scale(1.2);
+}
+
+.theme-btn:hover:not(.active) {
+    transform: scale(1.1);
+}
+
+.theme-dot {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.tp-padrao  { background: linear-gradient(135deg, #051c11 50%, #2ecc71 50%); }
+.tp-diurno  { background: linear-gradient(135deg, #f0f8f4 50%, #27ae60 50%); border: 1px solid #ccc; }
+.tp-noturno { background: linear-gradient(135deg, #121212 50%, #2ecc71 50%); }
+
+/* ===== Tema Diurno ===== */
+body.tema-diurno {
+    background-color: #f0f8f4;
+    color: #1a1a1a;
+}
+body.tema-diurno header,
+body.tema-diurno footer                         { background: #1a7a3e; }
+body.tema-diurno .section-title                 { color: #1a5e38; }
+body.tema-diurno .section-desc                  { color: #333; }
+body.tema-diurno .stats,
+body.tema-diurno .bg-light                      { background-color: #d8f0e4; }
+body.tema-diurno .card                          { background: #fff; }
+body.tema-diurno .card h4                       { color: #1a5e38; }
+body.tema-diurno .tech-item                     { background: #e4f5ec; }
+body.tema-diurno .tech-item h4                  { color: #1a5e38; }
+body.tema-diurno .modeling-content              { background: #fff; }
+body.tema-diurno .modeling-intro h3             { color: #1a5e38; }
+body.tema-diurno .analysis-text h4              { color: #1a5e38; }
+body.tema-diurno tr:hover                       { background-color: #e4f5ec; }
+body.tema-diurno .form-group input[type="text"],
+body.tema-diurno .form-group input[type="email"],
+body.tema-diurno .form-group input[type="tel"]  { background: #fff; }
+body.tema-diurno .checkbox-label                { background: #fff; }
+body.tema-diurno .theme-switcher                { background: #1a7a3e; }
+
+/* ===== Tema Noturno ===== */
+body.tema-noturno {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+body.tema-noturno header,
+body.tema-noturno footer                        { background: #050f09; }
+body.tema-noturno .section-title               { color: #2ecc71; }
+body.tema-noturno .section-desc                { color: #bbb; }
+body.tema-noturno .stats,
+body.tema-noturno .bg-light                    { background-color: #1a1a1a; }
+body.tema-noturno .card                        { background: #1e1e1e; color: #e0e0e0; }
+body.tema-noturno .card h4                     { color: #2ecc71; }
+body.tema-noturno .card-detail                 { color: #999; border-top-color: #333; }
+body.tema-noturno .tech-item                   { background: #1e1e1e; }
+body.tema-noturno .tech-item h4                { color: #e0e0e0; }
+body.tema-noturno .stat-item p                 { color: #bbb; }
+body.tema-noturno th                           { background-color: #050f09; }
+body.tema-noturno td                           { border-bottom-color: #333; }
+body.tema-noturno tr:hover                     { background-color: #1e1e1e; }
+body.tema-noturno .modeling-content            { background: #1e1e1e; box-shadow: 0 5px 15px rgba(0,0,0,0.4); }
+body.tema-noturno .modeling-intro h3           { color: #e0e0e0; }
+body.tema-noturno .modeling-intro p            { color: #bbb; }
+body.tema-noturno .analysis-text h4            { color: #2ecc71; }
+body.tema-noturno .form-group > label          { color: #2ecc71; }
+body.tema-noturno .form-group input[type="text"],
+body.tema-noturno .form-group input[type="email"],
+body.tema-noturno .form-group input[type="tel"] { background: #1e1e1e; color: #e0e0e0; border-color: #333; }
+body.tema-noturno .checkbox-label              { background: #1e1e1e; color: #e0e0e0; border-color: #333; }
+body.tema-noturno .demo-success p              { color: #bbb; }
+body.tema-noturno .theme-switcher              { background: #050f09; }

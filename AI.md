@@ -188,6 +188,81 @@ Duas adições no `index.html` e os respectivos estilos no `css/style.css`:
 
 ---
 
+## Interação 6
+
+### O que foi solicitado para a IA
+
+Implementar um sistema de troca de tema (cores de fundo) na landing page principal do TerraVis, com os seguintes requisitos:
+- Exatamente 3 temas diferentes
+- Cada tema deve alterar ao menos cor de fundo da página e cor do texto
+- Alternância dinâmica sem recarregar a página
+- Usar `addEventListener`, arrow functions e código organizado em funções
+- Usar classes CSS para definir os temas (ex: `.tema-claro`, `.tema-escuro`) — sem manipular estilos diretamente via JS
+- Botões visuais para troca de tema
+- Opcional: salvar tema escolhido no `localStorage`
+- Apenas HTML, CSS e JavaScript puro — sem frameworks ou bibliotecas
+
+### O que a IA retornou
+
+**`index.html`** — adicionou painel de tema fixo antes do `<script>`:
+- `<div class="theme-switcher">` com 3 botões circulares (`data-tema="tema-padrao"`, `data-tema="tema-diurno"`, `data-tema="tema-noturno"`)
+- Cada botão contém um `<span class="theme-dot">` com gradiente diagonal mostrando a cor do header e do fundo do respectivo tema
+- Atributos `aria-label` e `role="group"` para acessibilidade
+
+**`src/css/style.css`** — adicionou 3 blocos ao final do arquivo:
+- Estilo do `.theme-switcher`: posição fixa no canto inferior direito, borda verde, border-radius em pílula, botões circulares com efeito `scale` no hover e no estado `.active`
+- `.tema-diurno`: fundo `#f0f8f4`, header/footer `#1a7a3e`, section-title `#1a5e38`, cards/formulários brancos, fundo de seções `#d8f0e4`
+- `.tema-noturno`: fundo `#121212`, header/footer `#050f09`, textos `#e0e0e0`, cards `#1e1e1e`, bordas de tabela e inputs ajustadas para `#333`, section-title em verde
+
+**`src/css/js/script.js`** — adicionou ao final do arquivo:
+- Array `TEMAS` com os 3 nomes de classe e constante `TEMA_KEY` para o `localStorage`
+- `aplicarTema(tema)`: remove todas as classes de tema do `body`, adiciona a nova (pulando a classe caso seja `tema-padrao`, que usa os estilos base), marca o botão `.active` correspondente e salva no `localStorage`
+- `initTemas()`: lê o tema salvo (ou usa `tema-padrao` como padrão), aplica na carga da página e registra os `click` listeners nos botões
+
+Os 3 temas entregues:
+- **Padrão** — identidade visual original do TerraVis (header verde escuro, fundo branco)
+- **Diurno** — header verde médio, fundo com leve tom esverdeado (`#f0f8f4`), textos escuros
+- **Noturno** — modo escuro completo, fundo `#121212`, textos em cinza claro, destaques mantidos em verde
+
+### O que foi alterado ou rejeitado
+
+**Aceito integralmente:**
+- Toda a estrutura HTML do seletor, todo o CSS dos temas e toda a lógica JS
+
+**Decisões tomadas pela IA:**
+- O tema **Padrão** não adiciona nenhuma classe ao `body` — os estilos base já existentes funcionam como o tema padrão, evitando duplicação de CSS
+- A chave `localStorage` escolhida foi `'terravis-tema'` (com prefixo do projeto) para evitar conflito com outros sites no mesmo domínio
+- O painel de tema adapta sua própria cor de fundo conforme o tema ativo, via seletores como `body.tema-noturno .theme-switcher`
+
+---
+
+## Interação 7
+
+### O que foi solicitado para a IA
+
+Replicar o sistema de troca de tema (implementado na Interação 6) para a página do quiz (`src/css/pagina/quiz.html`).
+
+### O que a IA retornou
+
+**`src/css/pagina/quiz.html`** — adicionou o mesmo bloco `.theme-switcher` com os 3 botões antes do `<script>`
+
+**`src/css/quiz.css`** — adicionou ao final do arquivo (antes do `@media`):
+- Bloco completo de estilos do `.theme-switcher` (idêntico ao de `style.css`, pois o quiz usa seu próprio CSS independente)
+- `.tema-diurno`: header `#1a7a3e`, card branco, `.question-text` em `#1a5e38`, opções com borda e letra esverdeadas, barra de progresso `#c5e8d5`
+- `.tema-noturno`: header `#050f09`, card `#1e1e1e`, textos `#e0e0e0`, opções com borda `#333` e fundo escuro, barra de progresso `#2a2a2a`, título do resultado em verde
+
+**`src/css/js/quiz.js`** — adicionou ao final do arquivo a mesma lógica de `aplicarTema()` e `initTemas()` da Interação 6, usando a **mesma chave** `'terravis-tema'` no `localStorage`
+
+### O que foi alterado ou rejeitado
+
+**Aceito integralmente:**
+- HTML, CSS e JS do sistema de temas no quiz
+
+**Decisão tomada pela IA:**
+- Usar a mesma chave `'terravis-tema'` no `localStorage` foi intencional: o tema escolhido na página principal persiste automaticamente ao abrir o quiz, e vice-versa, garantindo consistência visual entre as duas páginas sem nenhuma comunicação extra entre elas
+
+---
+
 
 
 

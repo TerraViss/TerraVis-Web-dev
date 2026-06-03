@@ -108,3 +108,29 @@ document.querySelectorAll('input[name="funcionalidade"]').forEach(cb => {
         document.getElementById('checkbox-group').classList.remove('group-error');
     });
 });
+
+// ===== Temas =====
+const TEMAS = ['tema-padrao', 'tema-diurno', 'tema-noturno'];
+const TEMA_KEY = 'terravis-tema';
+
+const aplicarTema = (tema) => {
+    document.body.classList.remove(...TEMAS);
+    if (tema !== 'tema-padrao') document.body.classList.add(tema);
+
+    document.querySelectorAll('.theme-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.tema === tema);
+    });
+
+    localStorage.setItem(TEMA_KEY, tema);
+};
+
+const initTemas = () => {
+    const temaSalvo = localStorage.getItem(TEMA_KEY) || 'tema-padrao';
+    aplicarTema(temaSalvo);
+
+    document.querySelectorAll('.theme-btn').forEach(btn => {
+        btn.addEventListener('click', () => aplicarTema(btn.dataset.tema));
+    });
+};
+
+initTemas();
